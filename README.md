@@ -2,7 +2,7 @@
 
 ## [Paper]() | [Project Page](https://eth-ait.github.io/graspxl/)
 
-<img src="/teaser_more.jpg" /> 
+<img src="/tease_more.jpg" /> 
 
 
 The code will be released.
