@@ -12,12 +12,10 @@ Human hands possess the dexterity to interact with diverse objects such as grasp
 
 ## BibTeX Citation
 ```
-@misc{zhang2024graspxl,
-      title={{GraspXL}: Generating Grasping Motions for Diverse Objects at Scale},
-      author={Hui Zhang and Sammy Christen and Zicong Fan and Otmar Hilliges and Jie Song},
-      year={2024},
-      eprint={2403.19649},
-      archivePrefix={arXiv},
-      primaryClass={cs.RO}
+@article{zhang2024graspxl,
+  title={{GraspXL}: Generating Grasping Motions for Diverse Objects at Scale},
+  author={Zhang, Hui and Christen, Sammy and Fan, Zicong and Hilliges, Otmar and Song, Jie},
+  journal={arXiv preprint arXiv:2403.19649},
+  year={2024}
 }
 ```
