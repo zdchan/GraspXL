@@ -1,6 +1,6 @@
 # GraspXL: Generating Grasping Motions for Diverse Objects at Scale
 
-## [Paper]() | [Project Page](https://eth-ait.github.io/graspxl/) | [Video](https://youtu.be/0-dRbxmX2PI)
+## [Paper](https://arxiv.org/abs/2403.19649) | [Project Page](https://eth-ait.github.io/graspxl/) | [Video](https://youtu.be/0-dRbxmX2PI)
 
 <img src="/tease_more.jpg" /> 
 
@@ -12,10 +12,12 @@ Human hands possess the dexterity to interact with diverse objects such as grasp
 
 ## BibTeX Citation
 ```
-@article{zhang2024graspxl,
-  title={{GraspXL}: Generating Grasping Motions for Diverse Objects at Scale},
-  author={Zhang, Hui and Christen, Sammy and Fan, Zicong and Hilliges, Otmar and Song, Jie},
-  journal={arXiv preprint},
-  year={2024}
+@misc{zhang2024graspxl,
+      title={{GraspXL}: Generating Grasping Motions for Diverse Objects at Scale},
+      author={Hui Zhang and Sammy Christen and Zicong Fan and Otmar Hilliges and Jie Song},
+      year={2024},
+      eprint={2403.19649},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}
 }
 ```
