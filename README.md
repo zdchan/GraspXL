@@ -7,7 +7,7 @@
 
 The code and generated grasping motions of 500k+ objects with different hands will be released soon.
 
-**If you are interested in the code or data and want to get the notification at the first time, you can fill [this form](https://forms.gle/NyU8Gk83M1itVvBQA) so that we can keep you updated.**
+**If you are interested in the code or data and want to get the notification at the first time, you can fill [this form](https://forms.gle/dNwaGvtb4ppi1HZt5) so that we can keep you updated.**
 
 
 ## BibTeX Citation
