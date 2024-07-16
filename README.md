@@ -10,7 +10,7 @@
 **The code will be released soon. We will also continuously enrich the dataset (e.g., motions generated with more hand models, more grasping motions generated with different objectives, etc) and keep you updated! Please also fill [this form](https://forms.gle/dNwaGvtb4ppi1HZt5) if you want to get the notification for any update!**
 
 ## Dataset
-The dataset is composed of several .zip files, which contain the generated diverse grasping motion sequences for different hands on the [Objaverse](https://objaverse.allenai.org/), and the processed (scaled and decimated) object mesh files. To make the dataset easier to download, we split the generated motions into several .zip files so that users can choose which to download. The formats are like this :
+The dataset is composed of several .zip files, which contain the generated diverse grasping motion sequences for different hands on the [Objaverse](https://objaverse.allenai.org/), and the processed (scaled and decimated) object mesh files. To make the dataset easier to download, we split the recorded motion sequences into several .zip files so that users can choose which to download. The formats are like this :
 
 ```
 object.zip
@@ -48,8 +48,7 @@ allegro_dataset_1.zip
             ...
         ...
 ```
-
-Most objects have 5 sequences saved in this .zip file. But not all.
+Not every object has the same amount of sequences recorded.
 Each .npy file contains the following info:
 ```
 data = np.load("allegro_x.npy", allow_pickle=True).item()
@@ -65,7 +64,7 @@ data['object_id']['angle']: not used.
 ```
 allegro_dataset_2.zip
 ```
-Same as above. Another group of recorded motion sequences. Most objects have 5 sequences saved in this .zip file.
+Same format as above. Another group of recorded motion sequences. 
 
 ```
 mano_dataset_1.zip
@@ -87,8 +86,7 @@ mano_dataset_1.zip
             ...
         ...
 ```
-
-Most objects have 5 sequences recorded. But not all.
+Not every object has the same amount of sequences recorded.
 Each .npy file contains the following info:
 ```
 data = np.load("mano_x.npy", allow_pickle=True).item()
@@ -104,7 +102,7 @@ data['object_id']['angle']: not used.
 mano_dataset_2.zip
 mano_dataset_3.zip
 ```
-Same as above. Another group of recorded motion sequences. Most objects have 5 sequences saved in each .zip file.
+Same as above. Another group of recorded motion sequences. 
 
 ## BibTeX Citation
 ```
