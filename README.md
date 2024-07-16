@@ -7,7 +7,7 @@
 ## Update
 **The large-scale generated motions for 500k+ objects, each with diverse objectives and currently MANO and Allegro hand models, are ready to download! If you are interested, just fill [this form](https://forms.gle/dNwaGvtb4ppi1HZt5) to get access!**
 
-**The code will be released soon. We will also continuously enrich the dataset (e.g., motions generated with more hand models, more grasping motions generated with different objectives, etc) and keep you updated! Please also fill [this form](https://forms.gle/dNwaGvtb4ppi1HZt5) if you want to keep updated!**
+**The code will be released soon. We will also continuously enrich the dataset (e.g., motions generated with more hand models, more grasping motions generated with different objectives, etc) and keep you updated! Please also fill [this form](https://forms.gle/dNwaGvtb4ppi1HZt5) if you want to get the notification for any update!**
 
 ## Dataset
 The dataset is composed of several .zip files, which contain the generated diverse grasping motion sequences for different hands on the [Objaverse](https://objaverse.allenai.org/), and the processed (scaled and decimated) object mesh files. To make the dataset easier to download, we split the generated motions into several .zip files so that users can choose which to download. The formats are like this :
