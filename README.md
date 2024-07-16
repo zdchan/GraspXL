@@ -49,6 +49,7 @@ allegro_dataset_1.zip
         ...
 ```
 Not every object has the same amount of sequences recorded.
+
 Each .npy file contains the following info:
 ```
 data = np.load("allegro_x.npy", allow_pickle=True).item()
@@ -87,6 +88,7 @@ mano_dataset_1.zip
         ...
 ```
 Not every object has the same amount of sequences recorded.
+
 Each .npy file contains the following info:
 ```
 data = np.load("mano_x.npy", allow_pickle=True).item()
