@@ -15,35 +15,35 @@ The dataset is composed of several .zip files, which contain the generated diver
 ```
 object.zip
     ├── small
-        ├── object_id
-           ├── object_id.obj
+        ├── <object_id>
+           ├── <object_id>.obj
         ...
     ├── medium
-        ├── object_id
-           ├── object_id.obj
+        ├── <object_id>
+           ├── <object_id>.obj
         ...
     ├── large
-        ├── object_id
-           ├── object_id.obj
+        ├── <object_id>
+           ├── <object_id>.obj
         ...
 ```
 Small, medium, and large contain object meshes with different scales (Check our paper for more details) used by the recorded sequences. 
 ```
 allegro_dataset_1.zip
     ├── small
-        ├── object_id
+        ├── <object_id>
            ├── allegro_1.npy
            ├── allegro_2.npy
            ├── allegro_3.npy
             ...
         ...
     ├── medium
-        ├── object_id
+        ├── <object_id>
            ├── allegro_1.npy
             ...
         ...
     ├── large
-        ├── object_id
+        ├── <object_id>
            ├── allegro_1.npy
             ...
         ...
@@ -70,19 +70,19 @@ Same as above.
 ```
 mano_dataset_1.zip
     ├── small
-        ├── object_id
+        ├── <object_id>
            ├── mano_1.npy
            ├── mano_2.npy
            ├── mano_3.npy
             ...
         ...
     ├── medium
-        ├── object_id
+        ├── <object_id>
            ├── mano_1.npy
             ...
         ...
     ├── large
-        ├── object_id
+        ├── <object_id>
            ├── mano_1.npy
             ...
         ...
