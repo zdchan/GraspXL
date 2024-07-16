@@ -50,7 +50,7 @@ allegro_dataset_1.zip
 ```
 Not every object has the same amount of sequences recorded.
 
-Each .npy file contains the following info:
+Each .npy file contains a single motion sequence with the following format:
 ```
 data = np.load("allegro_x.npy", allow_pickle=True).item()
 data['right_hand']['trans']: a numpy array with the shape (frame_num, 3), which is the position sequence of the wrist.
@@ -89,7 +89,7 @@ mano_dataset_1.zip
 ```
 Not every object has the same amount of sequences recorded.
 
-Each .npy file contains the following info:
+Each .npy file contains a single motion sequence with the following format:
 ```
 data = np.load("mano_x.npy", allow_pickle=True).item()
 data['right_hand']['trans']: a numpy array with the shape (frame_num, 3), which is the position sequence of the wrist.
