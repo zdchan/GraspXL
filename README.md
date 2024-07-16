@@ -45,6 +45,17 @@ allegro_dataset_1.zip
 ```
 
 Most objects have 5 sequences recorded. But not all.
+Each .npy file contains the following info:
+```
+data = np.load("allegro_x.npy", allow_pickle=True).item()
+data['right_hand']['trans']: a numpy array with the shape (frame_num, 3), which is the position sequence of the wrist.
+data['right_hand']['rot']: a numpy array with the shape (frame_num, 3), which is the orientation (in axis angle) sequence of the wrist.
+data['right_hand']['pose']: a numpy array with the shape (frame_num, 22), where the first 6 dimensions of each frame are 0, and the remaining 16 dimensions are the joint angles.
+
+data['object_id']['trans']: a numpy array with the shape (frame_num, 3), which is the position sequence of the wrist.
+data['object_id']['rot']: a numpy array with the shape (frame_num, 3), which is the orientation (in axis angle) sequence of the wrist.
+data['object_id']['angle']: not used.
+```
 
 ```
 allegro_dataset_2.zip
@@ -70,6 +81,17 @@ mano_dataset_1.zip
 ```
 
 Most objects have 5 sequences recorded. But not all.
+Each .npy file contains the following info:
+```
+data = np.load("mano_x.npy", allow_pickle=True).item()
+data['right_hand']['trans']: a numpy array with the shape (frame_num, 3), which is the position sequence of the wrist.
+data['right_hand']['rot']: a numpy array with the shape (frame_num, 3), which is the orientation (in axis angle) sequence of the wrist (the first 3 dimensions for MANO parameter).
+data['right_hand']['pose']: a numpy array with the shape (frame_num, 45), which is the sequence of the remaining 45 dimensions of MANO parameter.
+
+data['object_id']['trans']: a numpy array with the shape (frame_num, 3), which is the position sequence of the wrist.
+data['object_id']['rot']: a numpy array with the shape (frame_num, 3), which is the orientation (in axis angle) sequence of the wrist.
+data['object_id']['angle']: not used.
+```
 ```
 mano_dataset_2.zip
 mano_dataset_3.zip
