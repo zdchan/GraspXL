@@ -49,7 +49,7 @@ allegro_dataset_1.zip
         ...
 ```
 
-Most objects have 5 sequences recorded. But not all.
+Most objects have 5 sequences saved in this .zip file. But not all.
 Each .npy file contains the following info:
 ```
 data = np.load("allegro_x.npy", allow_pickle=True).item()
@@ -65,7 +65,7 @@ data['object_id']['angle']: not used.
 ```
 allegro_dataset_2.zip
 ```
-Same as above.
+Same as above. Another group of recorded motion sequences. Most objects have 5 sequences saved in this .zip file.
 
 ```
 mano_dataset_1.zip
@@ -104,7 +104,7 @@ data['object_id']['angle']: not used.
 mano_dataset_2.zip
 mano_dataset_3.zip
 ```
-Same as above.
+Same as above. Another group of recorded motion sequences. Most objects have 5 sequences saved in each .zip file.
 
 ## BibTeX Citation
 ```
