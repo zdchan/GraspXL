@@ -12,6 +12,7 @@
 ## Dataset
 The dataset is composed of several .zip files, which contain the generated diverse grasping motion sequences for different hands on the [Objaverse](https://objaverse.allenai.org/), and the processed (scaled and decimated) object mesh files. To make the dataset easier to download, we split the recorded motion sequences into several .zip files so that users can choose which to download. The formats are like this :
 
+### Objects
 ```
 object.zip
     ├── small
@@ -28,6 +29,8 @@ object.zip
         ...
 ```
 Small, medium, and large contain object meshes with different scales (Check our paper for more details) used by the recorded sequences. 
+
+### Allegro sequences
 ```
 allegro_dataset_1.zip
     ├── small
@@ -67,6 +70,7 @@ allegro_dataset_2.zip
 ```
 Same format as above. Another group of recorded motion sequences. 
 
+### MANO sequences
 ```
 mano_dataset_1.zip
     ├── small
