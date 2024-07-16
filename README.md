@@ -4,6 +4,9 @@
 
 <img src="/tease_more.jpg" /> 
 
+## Update
+The data is ready to download! If you want the large-scale generated motions (500k+ objects and different hand models), just fill [this form](https://forms.gle/dNwaGvtb4ppi1HZt5) to get access!
+
 
 The code and generated grasping motions of 500k+ objects with different hands will be released soon.
 
