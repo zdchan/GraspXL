@@ -1,6 +1,6 @@
 # GraspXL: Generating Grasping Motions for Diverse Objects at Scale
 
-## [Paper](https://arxiv.org/pdf/2403.19649.pdf) | [Project Page](https://eth-ait.github.io/graspxl/) | [Video](https://youtu.be/0-dRbxmX2PI)
+## [Paper](https://arxiv.org/pdf/2403.19649.pdf) | [Project Page](https://eth-ait.github.io/graspxl/) | [Video](https://youtu.be/z7axE9F7d6s)
 
 <img src="/tease_more.jpg" /> 
 
