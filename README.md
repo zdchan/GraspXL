@@ -57,8 +57,8 @@ data['right_hand']['trans']: a numpy array with the shape (frame_num, 3), which 
 data['right_hand']['rot']: a numpy array with the shape (frame_num, 3), which is the orientation (in axis angle) sequence of the wrist.
 data['right_hand']['pose']: a numpy array with the shape (frame_num, 22), where the first 6 dimensions of each frame are 0, and the remaining 16 dimensions are the joint angles.
 
-data['object_id']['trans']: a numpy array with the shape (frame_num, 3), which is the position sequence of the wrist.
-data['object_id']['rot']: a numpy array with the shape (frame_num, 3), which is the orientation (in axis angle) sequence of the wrist.
+data['object_id']['trans']: a numpy array with the shape (frame_num, 3), which is the position sequence of the object.
+data['object_id']['rot']: a numpy array with the shape (frame_num, 3), which is the orientation (in axis angle) sequence of the object.
 data['object_id']['angle']: not used.
 ```
 
@@ -96,8 +96,8 @@ data['right_hand']['trans']: a numpy array with the shape (frame_num, 3), which 
 data['right_hand']['rot']: a numpy array with the shape (frame_num, 3), which is the orientation (in axis angle) sequence of the wrist (the first 3 dimensions for MANO parameter).
 data['right_hand']['pose']: a numpy array with the shape (frame_num, 45), which is the sequence of the remaining 45 dimensions of MANO parameter.
 
-data['object_id']['trans']: a numpy array with the shape (frame_num, 3), which is the position sequence of the wrist.
-data['object_id']['rot']: a numpy array with the shape (frame_num, 3), which is the orientation (in axis angle) sequence of the wrist.
+data['object_id']['trans']: a numpy array with the shape (frame_num, 3), which is the position sequence of the object.
+data['object_id']['rot']: a numpy array with the shape (frame_num, 3), which is the orientation (in axis angle) sequence of the object.
 data['object_id']['angle']: not used.
 ```
 ```
