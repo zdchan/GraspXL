@@ -14,7 +14,7 @@ The dataset is composed of several .zip files, which contain the generated diver
 
 ### Objects
 ```
-object.zip
+object_dataset.zip
     ├── small
         ├── <object_id>
            ├── <object_id>.obj
