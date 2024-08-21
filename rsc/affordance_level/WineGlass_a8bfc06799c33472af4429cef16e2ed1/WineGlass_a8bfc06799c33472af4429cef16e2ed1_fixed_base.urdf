@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<robot name="WineGlass_a8bfc06799c33472af4429cef16e2ed1">
+   <material name="obj_color">
+      <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+   </material>
+   <link name="top">
+      <inertial>
+         <origin rpy="0.0002048250431681804 0.0003808761793436689 0.0003808762701879783" xyz="-3.679324682823273e-05 -0.0001097932468282324 0.02992421391371211"/>
+         <mass value="0.3470625902671888"/>
+         <inertia ixx="0.000380876224763688" ixy="-4.542429027408405e-11" ixz="6.131668821048386e-10" iyy="0.0003808762247636881" iyz="6.131668821225207e-10" izz="0.0002048250431724517"/>
+      </inertial>
+      <visual>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="top_watertight_tiny.stl" scale="1 1 1"/>
+         </geometry>
+         <material name="obj_color"/>
+      </visual>
+      <collision>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="top_watertight_tiny.obj" scale="1 1 1"/>
+         </geometry>
+      </collision>
+   </link>
+   <link name="bottom">
+      <inertial>
+         <origin rpy="9.926113802792815e-06 9.926115166937657e-06 1.417001437662079e-05" xyz="-3.68946579579332e-05 -0.0001098947588019537 -0.09451071309800604"/>
+         <mass value="0.04472319146221475"/>
+         <inertia ixx="9.926114640580077e-06" ixy="-6.639720324557172e-13" ixz="-2.205184672774165e-11" iyy="9.926114329380035e-06" iyz="-2.209741657590968e-11" izz="1.417001437639115e-05"/>
+      </inertial>
+      <visual>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="bottom_watertight_tiny.stl" scale="1 1 1"/>
+         </geometry>
+         <material name="obj_color"/>
+      </visual>
+      <collision>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="bottom_watertight_tiny.obj" scale="1 1 1"/>
+         </geometry>
+      </collision>
+   </link>
+   <link name="world"/>
+   <joint name="world_to_base" type="fixed">
+      <origin xyz="0 0 0"/>
+      <axis xyz="0 0 0"/>
+      <parent link="world"/>
+      <child link="bottom"/>
+   </joint>
+   <joint name="rotation" type="revolute">
+      <origin xyz="0 0 0"/>
+      <axis xyz="0 0 -1"/>
+      <parent link="bottom"/>
+      <child link="top"/>
+      <dynamics damping="1.0" friction="1.0"/>
+      <limit effort="0.1" velocity="0.1" lower="0" upper="0.001"/>
+   </joint>
+</robot>

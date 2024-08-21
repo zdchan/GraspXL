@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<robot name="WineBottle_d8b6c270d29c58c55627157b31e16dc2">
+   <material name="obj_color">
+      <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+   </material>
+   <link name="top">
+      <inertial>
+         <origin rpy="0.0001664026682894185 0.0006346180838078108 0.0006346181251421061" xyz="-5.14389527658404e-05 -0.0001494336398452584 -0.03341418404772252"/>
+         <mass value="0.3749509470326527"/>
+         <inertia ixx="0.0006346180860914223" ixy="9.443989646164197e-12" ixz="-6.460378060707907e-10" iyy="0.0006346181228562919" iyz="-7.83634215352601e-10" izz="0.0001664026682916216"/>
+      </inertial>
+      <visual>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="top_watertight_tiny.stl" scale="1 1 1"/>
+         </geometry>
+         <material name="obj_color"/>
+      </visual>
+      <collision>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="top_watertight_tiny.obj" scale="1 1 1"/>
+         </geometry>
+      </collision>
+   </link>
+   <link name="bottom">
+      <inertial>
+         <origin rpy="1.80130394316707e-06 1.339876928022492e-05 1.339877738883178e-05" xyz="-5.127855649779275e-05 -0.0001492252739496901 0.08658446748445343"/>
+         <mass value="0.02830468633001217"/>
+         <inertia ixx="1.339877158281272e-05" ixy="-3.656350850686563e-12" ixz="-9.030923764185345e-12" iyy="1.339877508623676e-05" iyz="-1.444771056518813e-12" izz="1.801303943174281e-06"/>
+      </inertial>
+      <visual>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="bottom_watertight_tiny.stl" scale="1 1 1"/>
+         </geometry>
+         <material name="obj_color"/>
+      </visual>
+      <collision>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="bottom_watertight_tiny.obj" scale="1 1 1"/>
+         </geometry>
+      </collision>
+   </link>
+   <joint name="rotation" type="revolute">
+      <origin xyz="0 0 0"/>
+      <axis xyz="0 0 -1"/>
+      <parent link="bottom"/>
+      <child link="top"/>
+      <dynamics damping="1.0" friction="1.0"/>
+      <limit effort="0.1" velocity="0.1" lower="0" upper="0.001"/>
+   </joint>
+</robot>

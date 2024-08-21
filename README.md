@@ -1,121 +1,133 @@
 # GraspXL: Generating Grasping Motions for Diverse Objects at Scale
 
-## [Paper](https://arxiv.org/pdf/2403.19649.pdf) | [Project Page](https://eth-ait.github.io/graspxl/) | [Video](https://youtu.be/z7axE9F7d6s)
+## [Paper](https://arxiv.org/pdf/2403.19649.pdf) | [Project Page](https://eth-ait.github.io/graspxl/) | [Video](https://youtu.be/0-dRbxmX2PI)
 
 <img src="/tease_more.jpg" /> 
 
-## Update
-**The large-scale generated motions for 500k+ objects, each with diverse objectives and currently MANO and Allegro hand models, are ready to download! If you are interested, just fill [this form](https://forms.gle/dNwaGvtb4ppi1HZt5) to get access!**
+### Contents
 
-**The code will be released soon. We will also continuously enrich the dataset (e.g., motions generated with more hand models, more grasping motions generated with different objectives, etc) and keep you updated! Please also fill [this form](https://forms.gle/dNwaGvtb4ppi1HZt5) if you want to get the notification for any update!**
+1. [News](#News)
+2. [Dataset](#Dataset)
+3. [Code](#Code)
+4. [Installation](#installation)
+5. [Demo](#Demo)
+6. [Citation](#citation)
+7. [License](#license)
+
+## News
+[2024.08] **Code released!**
+
+[2024.07] **The large-scale generated motions for 500k+ objects, each with diverse objectives and currently MANO and Allegro hand models, are ready to download! If you are interested, just fill [this form](https://forms.gle/dNwaGvtb4ppi1HZt5) to get access! **
+
+**We will continuously enrich the dataset (e.g., motions generated with more hand models, more grasping motions generated with different objectives, etc) and keep you updated! ** 
+
+[2024.03] **~~The code will be released soon.~~ Please fill [this form](https://forms.gle/dNwaGvtb4ppi1HZt5) if you want to get the notification for any update!**
+
+
 
 ## Dataset
-The dataset is composed of several .zip files, which contain the generated diverse grasping motion sequences for different hands on the [Objaverse](https://objaverse.allenai.org/), and the processed (scaled and decimated) object mesh files. To make the dataset easier to download, we split the recorded motion sequences into several .zip files (5 sequences for most objects in each .zip file) so that users can choose which to download. The formats are like this :
+The dataset has been released, including the grasping motion sequences of different robot hands for 500k+ objects. Check [docs/DATASET.md](./docs/DATASET.md) for details and instructions.
 
-### Objects
-```
-object_dataset.zip
-    ├── small
-        ├── <object_id>
-           ├── <object_id>.obj
-        ...
-    ├── medium
-        ├── <object_id>
-           ├── <object_id>.obj
-        ...
-    ├── large
-        ├── <object_id>
-           ├── <object_id>.obj
-        ...
-```
-Small, medium, and large contain object meshes with different scales (Check our paper for more details) used by the recorded sequences. 
 
-### Allegro sequences
-```
-allegro_dataset_1.zip
-    ├── small
-        ├── <object_id>
-           ├── allegro_1.npy
-           ├── allegro_2.npy
-           ├── allegro_3.npy
-            ...
-        ...
-    ├── medium
-        ├── <object_id>
-           ├── allegro_1.npy
-            ...
-        ...
-    ├── large
-        ├── <object_id>
-           ├── allegro_1.npy
-            ...
-        ...
-```
-Not every object has the same amount of sequences recorded.
 
-Each .npy file contains a single motion sequence with the following format:
-```
-data = np.load("allegro_x.npy", allow_pickle=True).item()
-data['right_hand']['trans']: a numpy array with the shape (frame_num, 3), which is the position sequence of the wrist.
-data['right_hand']['rot']: a numpy array with the shape (frame_num, 3), which is the orientation (in axis angle) sequence of the wrist.
-data['right_hand']['pose']: a numpy array with the shape (frame_num, 22), where the first 6 dimensions of each frame are 0, and the remaining 16 dimensions are the joint angles.
+## Code
 
-data['object_id']['trans']: a numpy array with the shape (frame_num, 3), which is the position sequence of the object.
-data['object_id']['rot']: a numpy array with the shape (frame_num, 3), which is the orientation (in axis angle) sequence of the object.
-data['object_id']['angle']: not used.
-```
+The repository comes with all the features of the [RaiSim](https://raisim.com/) physics simulation, as GraspXL is integrated into RaiSim.
+
+The GraspXL related code can be found in the [raisimGymTorch](./raisimGymTorch) subfolder. There are 12 environments (see [envs](./raisimGymTorch/raisimGymTorch/env/envs/)) for Allegro Hand ("allegro\_"), Mano Hand ("ours\_") and Shadow Hand ("shadow\_"), 4 for each. "\_fixed" and "\_floating" represent the environments for the first and second training phase respectively. "\_test" represents the test environments and contain different test scripts for different test sets (PartNet, ShapeNet, Objaverse, and Generated/Reconstructed objects). "\_demo" represents the visualization environments which also record the generated motions.
+
+
+
+## Installation
+
+
+For good practice for Python package management, it is recommended to use virtual environments (e.g., `virtualenv` or `conda`) to ensure packages from different projects do not interfere with each other.
+
+### RaiSim setup
+
+GraspXL is based on RaiSim simulation. For the installation of RaiSim, see and follow our documentation under [docs/INSTALLATION.md](./docs/INSTALLATION.md). Note that you need to get a valid, free license for the RaiSim physics simulation and an activation key via this [link](https://docs.google.com/forms/d/e/1FAIpQLSc1FjnRj4BV9xSTgrrRH-GMDsio_Um4DmD0Yt12MLNAFKm12Q/viewform). 
+
+### GraspXL setup
+
+After setting up RaiSim, the last part is to set up the GraspXL environments.
 
 ```
-allegro_dataset_2.zip
+$ cd raisimGymTorch 
+$ python setup.py develop
 ```
-Same format as above. Another group of recorded motion sequences. 
 
-### MANO sequences
-```
-mano_dataset_1.zip
-    ├── small
-        ├── <object_id>
-           ├── mano_1.npy
-           ├── mano_2.npy
-           ├── mano_3.npy
-            ...
-        ...
-    ├── medium
-        ├── <object_id>
-           ├── mano_1.npy
-            ...
-        ...
-    ├── large
-        ├── <object_id>
-           ├── mano_1.npy
-            ...
-        ...
-```
-Not every object has the same amount of sequences recorded.
+All the environments are run from this raisimGymTorch folder. 
 
-Each .npy file contains a single motion sequence with the following format:
-```
-data = np.load("mano_x.npy", allow_pickle=True).item()
-data['right_hand']['trans']: a numpy array with the shape (frame_num, 3), which is the position sequence of the wrist.
-data['right_hand']['rot']: a numpy array with the shape (frame_num, 3), which is the orientation (in axis angle) sequence of the wrist (the first 3 dimensions for MANO parameter).
-data['right_hand']['pose']: a numpy array with the shape (frame_num, 45), which is the sequence of the remaining 45 dimensions of MANO parameter.
+Note that every time you change the environment.hpp, you need to run `python setup.py develop` again to build the environments.
 
-data['object_id']['trans']: a numpy array with the shape (frame_num, 3), which is the position sequence of the object.
-data['object_id']['rot']: a numpy array with the shape (frame_num, 3), which is the orientation (in axis angle) sequence of the object.
-data['object_id']['angle']: not used.
+Then install pytorch with (Check your CUDA version and make sure they match)
+
 ```
+$ pip3 install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu118
 ```
-mano_dataset_2.zip
-mano_dataset_3.zip
+
+Install required packages
+
 ```
-Same as above. Another group of recorded motion sequences. 
+$ pip install scipy
+$ pip install scikit-learn scipy matplotlib
+```
+
+### Other alternative requirements
+
+1. (Only for Mano policy training) GraspXL uses [manotorch](https://github.com/lixiny/manotorch) [Anatomy Loss](https://github.com/lixiny/manotorch#anatomy-loss) during the training (for Mano Hand only), so if you want to train Mano Hand policies (run [ours_fixed/runner.py](./raisimGymTorch/raisimGymTorch/env/envs/ours_fixed/runner.py) or [ours_floating/runner.py](./raisimGymTorch/raisimGymTorch/env/envs/ours_floating/runner.py)), you need to install manotorch. Please follow the official guideline in [manotorch](https://github.com/lixiny/manotorch).
+
+​	After installation, replace the mano_assets_root in [mano_amano.py](https://github.com/zdchan/GraspXL_private/blob/185837497d9ce6c1e0db8dd106ed57f39bfbfa72/raisimGymTorch/raisimGymTorch/helper/mano_amano.py#L10C1-L13C75) to your own path.
+
+2. (Only for ShapeNet test set) If you want to use the objects from the ShapeNet test set, download [ShapeNet.zip](https://1drv.ms/u/s!ArIwHmrYW4HkoO0tm1D48rVudC4Bnw?e=DyEtsL), upzip and put the folder named large_scale_obj in [rsc](./rsc) (The original object meshes are from [ShapeNet](https://www.shapenet.org/))
+
+You should be all set now. Try to run the demo!
+
+
+
+## Demo
+
+We provide some pre-trained models to view the output of our method. They are stored in [this folder](./raisimGymTorch/data_all/). 
+
++ For interactive visualizations, you need to run
+
+  ```Shell
+  raisimUnity/linux/raisimUnity.x86_64
+  ```
+
+  and check the Auto-connect option.
+
++ To randomly choose an object and visualize the generated sequences in simulation (use Mano Hand as an example), run
+
+  ```Shell
+  python raisimGymTorch/env/envs/ours_demo/demo.py
+  ```
+
+You can indicate the objects or the objectives of the generated motions by the visualization environments
+
++ The object is by default a random object from the training set, which you can change to a specified object. You can specify the object set by the variable cat_name (e.g., for [ours_demo](https://github.com/zdchan/GraspXL_private/blob/185837497d9ce6c1e0db8dd106ed57f39bfbfa72/raisimGymTorch/raisimGymTorch/env/envs/ours_demo/demo.py#L76)), and choose a specific object by the variable obj_list (e.g., for [ours_demo](https://github.com/zdchan/GraspXL_private/blob/185837497d9ce6c1e0db8dd106ed57f39bfbfa72/raisimGymTorch/raisimGymTorch/env/envs/ours_demo/demo.py#L90)). 
+
+  The object sets include [mixed_train](./rsc/mixed_train) (the training set from [PartNet](https://partnet.cs.stanford.edu/)), [affordance_level](./rsc/affordance_level) (the PartNet test set), [large_scale_obj](./rsc/large_scale_obj) (the ShapeNet test set which you can download with [ShapeNet.zip](https://1drv.ms/u/s!ArIwHmrYW4HkoO0tm1D48rVudC4Bnw?e=DyEtsL)),  [YCB](./rsc/YCB) (reconstructed YCB objects), [gt](./rsc/gt) (groundtruth of the reconstructed YCB objects), [wild](./rsc/wild) (reconstructed in-the-wild objects), [gen](./rsc/gen) (objects generated with [DreamFusion](https://dreamfusion3d.github.io/))
+
++ The objectives are by default randomly sampled with the function get_initial_pose. You can also specify a desired objective with the function get_initial_pose_set.  [ours_demo](https://github.com/zdchan/GraspXL_private/blob/431f3c17264311e6c776eddd8b2445ab0fec4a8b/raisimGymTorch/raisimGymTorch/env/envs/ours_demo/demo.py#L198C9-L201C107) shows an example.
+
+
 
 ## BibTeX Citation
+
+To cite us, please use the following:
+
 ```
-@inProceedings{zhang2024graspxl,
+@article{zhang2024graspxl,
   title={{GraspXL}: Generating Grasping Motions for Diverse Objects at Scale},
   author={Zhang, Hui and Christen, Sammy and Fan, Zicong and Hilliges, Otmar and Song, Jie},
-  booktitle={European Conference on Computer Vision (ECCV)},
+  journal={arXiv preprint arXiv:2403.19649},
   year={2024}
 }
 ```
+
+
+
+## License
+
+See the following [license](LICENSE.md).

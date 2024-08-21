@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<robot name="Camera_f1558b9324187ad5ee9f6e6cbbdc436f">
+   <material name="obj_color">
+      <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+   </material>
+   <link name="top">
+      <inertial>
+         <origin rpy="0.001083461158845875 0.001780043707864589 0.001959502842200841" xyz="-0.002970249695478377 0.003078560165304275 -0.002099266299853098"/>
+         <mass value="0.9217967998903506"/>
+         <inertia ixx="0.001784469333336497" ixy="-6.093826497358536e-07" ixz="-2.78256190943017e-05" iyy="0.001083807876338948" iyz="1.738046753008018e-05" izz="0.00195473049923586"/>
+      </inertial>
+      <visual>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="top_watertight_tiny.stl" scale="1 1 1"/>
+         </geometry>
+         <material name="obj_color"/>
+      </visual>
+      <collision>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="top_watertight_tiny.obj" scale="1 1 1"/>
+         </geometry>
+      </collision>
+   </link>
+   <link name="bottom">
+      <inertial>
+         <origin rpy="1.633333333331402e-08 1.633333333331402e-08 1.633333333331402e-08" xyz="0.08660200000000004 0.08660200000000004 0.08660200000000004"/>
+         <mass value="0.0009800000000000026"/>
+         <inertia ixx="1.633333333331402e-08" ixy="-0" ixz="-0" iyy="1.633333333331402e-08" iyz="-0" izz="1.633333333331402e-08"/>
+      </inertial>
+      <visual>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="bottom_watertight_tiny.stl" scale="1 1 1"/>
+         </geometry>
+         <material name="obj_color"/>
+      </visual>
+   </link>
+   <joint name="rotation" type="revolute">
+      <origin xyz="0 0 0"/>
+      <axis xyz="0 0 -1"/>
+      <parent link="bottom"/>
+      <child link="top"/>
+      <dynamics damping="1.0" friction="1.0"/>
+      <limit effort="0.1" velocity="0.1" lower="0" upper="0.001"/>
+   </joint>
+</robot>

@@ -1,0 +1,20 @@
+{
+  "joint_order": [
+    "right_wrist",
+    "right_index1",
+    "right_index2",
+    "right_index3",
+    "right_middle1",
+    "right_middle2",
+    "right_middle3",
+    "right_pinky1",
+    "right_pinky2",
+    "right_pinky3",
+    "right_ring1",
+    "right_ring2",
+    "right_ring3",
+    "right_thumb1",
+    "right_thumb2",
+    "right_thumb3"
+  ]
+}

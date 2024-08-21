@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<robot name="BeerBottle_412289ded0359b326802d3678aa9d56b">
+   <material name="obj_color">
+      <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+   </material>
+   <link name="top">
+      <inertial>
+         <origin rpy="0.0006139009626601865 0.006284609067185523 0.00628854690205618" xyz="-0.0001121717696092797 0.000113417698988338 -0.03642487749674062"/>
+         <mass value="1.008477412172394"/>
+         <inertia ixx="0.006288544064550998" ixy="-1.057800038331964e-07" ixz="-9.695025378683734e-08" iyy="0.006284599475260961" iyz="-8.394886871132995e-06" izz="0.0006139133920899314"/>
+      </inertial>
+      <visual>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="top_watertight_tiny.stl" scale="1 1 1"/>
+         </geometry>
+         <material name="obj_color"/>
+      </visual>
+      <collision>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="top_watertight_tiny.obj" scale="1 1 1"/>
+         </geometry>
+      </collision>
+   </link>
+   <link name="bottom">
+      <inertial>
+         <origin rpy="1.633333333331402e-08 1.633333333331402e-08 1.633333333331402e-08" xyz="0.08660200000000004 0.08660200000000004 0.08660200000000004"/>
+         <mass value="0.0009800000000000026"/>
+         <inertia ixx="1.633333333331402e-08" ixy="-0" ixz="-0" iyy="1.633333333331402e-08" iyz="-0" izz="1.633333333331402e-08"/>
+      </inertial>
+      <visual>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="bottom_watertight_tiny.stl" scale="1 1 1"/>
+         </geometry>
+         <material name="obj_color"/>
+      </visual>
+   </link>
+   <joint name="rotation" type="revolute">
+      <origin xyz="0 0 0"/>
+      <axis xyz="0 0 -1"/>
+      <parent link="bottom"/>
+      <child link="top"/>
+      <dynamics damping="1.0" friction="1.0"/>
+      <limit effort="0.1" velocity="0.1" lower="0" upper="0.001"/>
+   </joint>
+</robot>

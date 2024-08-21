@@ -1,0 +1,63 @@
+seed: 1
+
+environment:
+  render: True
+  eval_every_n: 100
+  update_every_n: 20
+  num_threads: 32
+  simulation_dt: 0.0025
+  control_dt: 0.01
+  max_time: 4.0
+  root_guided: True
+  visualize: False
+  unseen: True
+  new_category: False
+  load_set: "mixed_train"
+  hand_model_r: "allegro_low_friction.urdf"
+  finger_action_std: 0.015
+  rot_action_std: 0.01
+  reward:
+    affordance_contact_reward:
+      coeff: 1.0
+    not_affordance_contact_reward:
+      coeff: -1.0
+
+    affordance_impulse_reward:
+      coeff: 0.5
+    not_affordance_impulse_reward:
+      coeff: -0.25
+
+    affordance_reward:
+      coeff: 0.3
+    not_affordance_reward:
+      coeff: -0.06
+
+
+    direction_reward:
+      coeff: -0.01
+    center_reward:
+      coeff: -10.0
+
+
+    anatomy_reward:
+      coeff: -0.0
+
+
+    wrist_vel_reward_:
+      coeff: -0.001
+    wrist_qvel_reward_:
+      coeff: -0.0001
+
+    obj_vel_reward_:
+      coeff: -1.5
+    obj_qvel_reward_:
+      coeff: -0.01
+
+
+
+    torque:
+      coeff: -0.0
+
+architecture:
+  policy_net: [128, 128]
+  value_net: [128, 128]

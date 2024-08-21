@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<robot name="Earphone_12389_left_earcup">
+   <material name="obj_color">
+      <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+   </material>
+   <link name="top">
+      <inertial>
+         <origin rpy="6.247793772482028e-05 9.585478601707163e-05 0.0001325893793263643" xyz="-0.05633375868162103 -0.03086857651565478 -0.0001796544265442657"/>
+         <mass value="0.1591336560498186"/>
+         <inertia ixx="0.0001306707683897814" ixy="1.143822906870467e-05" ixz="3.422339637580425e-08" iyy="6.439651529190562e-05" iyz="1.433508389841231e-08" izz="9.585481938656922e-05"/>
+      </inertial>
+      <visual>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="top_watertight_tiny.stl" scale="1 1 1"/>
+         </geometry>
+         <material name="obj_color"/>
+      </visual>
+      <collision>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="top_watertight_tiny.obj" scale="1 1 1"/>
+         </geometry>
+      </collision>
+   </link>
+   <link name="bottom">
+      <inertial>
+         <origin rpy="0.0008186279550361801 0.001854600123101979 0.002285463226413339" xyz="0.0143186882776159 0.01354430667542 -0.0001931030639979745"/>
+         <mass value="0.8132712666655022"/>
+         <inertia ixx="0.001566545808995009" ixy="0.000464156185286624" ixz="3.421892066729487e-08" iyy="0.001106682270854383" iyz="-3.060834461643933e-08" izz="0.002285463224702106"/>
+      </inertial>
+      <visual>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="bottom_watertight_tiny.stl" scale="1 1 1"/>
+         </geometry>
+         <material name="obj_color"/>
+      </visual>
+      <collision>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="bottom_watertight_tiny.obj" scale="1 1 1"/>
+         </geometry>
+      </collision>
+   </link>
+   <link name="world"/>
+   <joint name="world_to_base" type="fixed">
+      <origin xyz="0 0 0"/>
+      <axis xyz="0 0 0"/>
+      <parent link="world"/>
+      <child link="bottom"/>
+   </joint>
+   <joint name="rotation" type="revolute">
+      <origin xyz="0 0 0"/>
+      <axis xyz="0 0 -1"/>
+      <parent link="bottom"/>
+      <child link="top"/>
+      <dynamics damping="1.0" friction="1.0"/>
+      <limit effort="0.1" velocity="0.1" lower="0" upper="0.001"/>
+   </joint>
+</robot>

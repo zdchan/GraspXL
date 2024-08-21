@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="ait-server-04.inf.ethz.ch" id="4c991e17-6608-4726-b509-e716a3814de7" port="22" nameFormat="DESCRIPTIVE" username="huizhang" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>

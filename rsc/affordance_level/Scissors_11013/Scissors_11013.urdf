@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<robot name="Scissors_11013">
+   <material name="obj_color">
+      <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+   </material>
+   <link name="top">
+      <inertial>
+         <origin rpy="0.0003842853141684237 0.001649463003451622 0.001995843431505425" xyz="0.04652715254988087 -0.001440381778782021 -0.0006466632589357744"/>
+         <mass value="0.4565506793395345"/>
+         <inertia ixx="0.0003924779757244813" ixy="0.0001014786774374641" ixz="4.153267744459784e-07" iyy="0.001641270466070951" iyz="4.971567858207588e-08" izz="0.001995843307330039"/>
+      </inertial>
+      <visual>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="top_watertight_tiny.stl" scale="1 1 1"/>
+         </geometry>
+         <material name="obj_color"/>
+      </visual>
+      <collision>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="top_watertight_tiny.obj" scale="1 1 1"/>
+         </geometry>
+      </collision>
+   </link>
+   <link name="bottom">
+      <inertial>
+         <origin rpy="5.012650405073525e-05 0.0002565750882085883 0.000293701108415731" xyz="-0.1000340551723678 -0.003793543454149953 0.0002438509163837065"/>
+         <mass value="0.1654857874488117"/>
+         <inertia ixx="5.156426289577278e-05" ixy="-1.696083229571693e-05" ixz="-3.124511314057351e-06" iyy="0.0002553200855365523" iyz="2.082808960062964e-06" izz="0.0002935183522427296"/>
+      </inertial>
+      <visual>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="bottom_watertight_tiny.stl" scale="1 1 1"/>
+         </geometry>
+         <material name="obj_color"/>
+      </visual>
+      <collision>
+         <origin rpy="0 0 0" xyz="0 0 0"/>
+         <geometry>
+            <mesh filename="bottom_watertight_tiny.obj" scale="1 1 1"/>
+         </geometry>
+      </collision>
+   </link>
+   <joint name="rotation" type="revolute">
+      <origin xyz="0 0 0"/>
+      <axis xyz="0 0 -1"/>
+      <parent link="bottom"/>
+      <child link="top"/>
+      <dynamics damping="1.0" friction="1.0"/>
+      <limit effort="0.1" velocity="0.1" lower="0" upper="0.001"/>
+   </joint>
+</robot>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ba3df82d-64af-419f-b9d1-97bea0ce52a8" name="ait-server-04.inf.ethz.ch">
+        <fileTransfer rootFolder="/local/home/huizhang" accessType="SFTP" host="ait-server-04.inf.ethz.ch" port="22" sshConfigId="4c991e17-6608-4726-b509-e716a3814de7" sshConfig="huizhang@ait-server-04.inf.ethz.ch:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
