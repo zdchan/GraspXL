@@ -41,7 +41,7 @@ The GraspXL related code can be found in the [raisimGymTorch](./raisimGymTorch) 
 ## Installation
 
 
-For good practice for Python package management, it is recommended to use virtual environments (e.g., `virtualenv` or `conda`) to ensure packages from different projects do not interfere with each other.
+For good practice for Python package management, it is recommended to use virtual environments (e.g., `virtualenv` or `conda`) to ensure packages from different projects do not interfere with each other. Python3.8 is supported.
 
 ### RaiSim setup
 
