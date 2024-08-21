@@ -93,7 +93,7 @@ We provide some pre-trained models to view the output of our method. They are st
 + For interactive visualizations, you need to run
 
   ```Shell
-  raisimUnity/linux/raisimUnity.x86_64
+  ./../raisimUnity/linux/raisimUnity.x86_64
   ```
 
   and check the Auto-connect option.
