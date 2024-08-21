@@ -80,7 +80,7 @@ $ pip install scikit-learn scipy matplotlib
 ​	After installation, replace the mano_assets_root in [mano_amano.py](https://github.com/zdchan/GraspXL/blob/1e239242082ec2bae9b9eddb4895f9f4f1d640af/raisimGymTorch/raisimGymTorch/helper/mano_amano.py#L10-L13) to your own path.
 
 2. (Only for ShapeNet test set) If you want to use the objects from the ShapeNet test set, download [ShapeNet.zip](https://1drv.ms/u/s!ArIwHmrYW4HkoO0tm1D48rVudC4Bnw?e=DyEtsL), upzip and put the folder named large_scale_obj in [rsc](./rsc) (The original object meshes are from [ShapeNet](https://www.shapenet.org/))
-3. (Only for large scale Objaverse test set) If you want to use the 500k+ objaverse objects, fill [this form](https://forms.gle/dNwaGvtb4ppi1HZt5) to get access to objaverse_urdf.zip. Unzip it and put the subset you want in [rsc](./rsc) 
+3. (Only for 500k+ Objaverse test set) If you want to use the 500k+ objaverse objects, fill [this form](https://forms.gle/dNwaGvtb4ppi1HZt5) to get access to objaverse_urdf.zip. Unzip it and put the subset you want in [rsc](./rsc) 
 
 You should be all set now. Try to run the demo!
 
