@@ -77,7 +77,7 @@ $ pip install scikit-learn scipy matplotlib
 
 1. (Only for Mano policy training) GraspXL uses [manotorch](https://github.com/lixiny/manotorch) [Anatomy Loss](https://github.com/lixiny/manotorch#anatomy-loss) during the training (for Mano Hand only), so if you want to train Mano Hand policies (run [ours_fixed/runner.py](./raisimGymTorch/raisimGymTorch/env/envs/ours_fixed/runner.py) or [ours_floating/runner.py](./raisimGymTorch/raisimGymTorch/env/envs/ours_floating/runner.py)), you need to install manotorch. Please follow the official guideline in [manotorch](https://github.com/lixiny/manotorch).
 
-​	After installation, replace the mano_assets_root in [mano_amano.py](https://github.com/zdchan/GraspXL_private/blob/185837497d9ce6c1e0db8dd106ed57f39bfbfa72/raisimGymTorch/raisimGymTorch/helper/mano_amano.py#L10C1-L13C75) to your own path.
+​	After installation, replace the mano_assets_root in [mano_amano.py](https://github.com/zdchan/GraspXL/blob/1e239242082ec2bae9b9eddb4895f9f4f1d640af/raisimGymTorch/raisimGymTorch/helper/mano_amano.py#L10-L13) to your own path.
 
 2. (Only for ShapeNet test set) If you want to use the objects from the ShapeNet test set, download [ShapeNet.zip](https://1drv.ms/u/s!ArIwHmrYW4HkoO0tm1D48rVudC4Bnw?e=DyEtsL), upzip and put the folder named large_scale_obj in [rsc](./rsc) (The original object meshes are from [ShapeNet](https://www.shapenet.org/))
 
@@ -105,11 +105,11 @@ We provide some pre-trained models to view the output of our method. They are st
 
 You can indicate the objects or the objectives of the generated motions by the visualization environments
 
-+ The object is by default a random object from the training set, which you can change to a specified object. You can specify the object set by the variable cat_name (e.g., for [ours_demo](https://github.com/zdchan/GraspXL_private/blob/185837497d9ce6c1e0db8dd106ed57f39bfbfa72/raisimGymTorch/raisimGymTorch/env/envs/ours_demo/demo.py#L76)), and choose a specific object by the variable obj_list (e.g., for [ours_demo](https://github.com/zdchan/GraspXL_private/blob/185837497d9ce6c1e0db8dd106ed57f39bfbfa72/raisimGymTorch/raisimGymTorch/env/envs/ours_demo/demo.py#L90)). 
++ The object is by default a random object from the training set, which you can change to a specified object. You can specify the object set by the variable cat_name (e.g., for [ours_demo](https://github.com/zdchan/GraspXL/blob/1e239242082ec2bae9b9eddb4895f9f4f1d640af/raisimGymTorch/raisimGymTorch/env/envs/ours_demo/demo.py#L76)), and choose a specific object by the variable obj_list (e.g., for [ours_demo](https://github.com/zdchan/GraspXL/blob/1e239242082ec2bae9b9eddb4895f9f4f1d640af/raisimGymTorch/raisimGymTorch/env/envs/ours_demo/demo.py#L90)). 
 
   The object sets include [mixed_train](./rsc/mixed_train) (the training set from [PartNet](https://partnet.cs.stanford.edu/)), [affordance_level](./rsc/affordance_level) (the PartNet test set), [large_scale_obj](./rsc/large_scale_obj) (the ShapeNet test set which you can download with [ShapeNet.zip](https://1drv.ms/u/s!ArIwHmrYW4HkoO0tm1D48rVudC4Bnw?e=DyEtsL)),  [YCB](./rsc/YCB) (reconstructed YCB objects), [gt](./rsc/gt) (groundtruth of the reconstructed YCB objects), [wild](./rsc/wild) (reconstructed in-the-wild objects), [gen](./rsc/gen) (objects generated with [DreamFusion](https://dreamfusion3d.github.io/))
 
-+ The objectives are by default randomly sampled with the function get_initial_pose. You can also specify a desired objective with the function get_initial_pose_set.  [ours_demo](https://github.com/zdchan/GraspXL_private/blob/431f3c17264311e6c776eddd8b2445ab0fec4a8b/raisimGymTorch/raisimGymTorch/env/envs/ours_demo/demo.py#L198C9-L201C107) shows an example.
++ The objectives are by default randomly sampled with the function get_initial_pose. You can also specify a desired objective with the function get_initial_pose_set.  [ours_demo](https://github.com/zdchan/GraspXL/blob/1e239242082ec2bae9b9eddb4895f9f4f1d640af/raisimGymTorch/raisimGymTorch/env/envs/ours_demo/demo.py#L198-L201) shows an example.
 
 
 
