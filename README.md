@@ -103,7 +103,7 @@ We provide some pre-trained models to view the output of our method. They are st
   python raisimGymTorch/env/envs/ours_demo/demo.py
   ```
 
-You can indicate the objects or the objectives of the generated motions by the visualization environments
+You can indicate the objects or the objectives of the generated motions in the visualization environments
 
 + The object is by default a random object from the training set, which you can change to a specified object. You can specify the object set by the variable cat_name (e.g., for [ours_demo](https://github.com/zdchan/GraspXL/blob/1e239242082ec2bae9b9eddb4895f9f4f1d640af/raisimGymTorch/raisimGymTorch/env/envs/ours_demo/demo.py#L76)), and choose a specific object by the variable obj_list (e.g., for [ours_demo](https://github.com/zdchan/GraspXL/blob/1e239242082ec2bae9b9eddb4895f9f4f1d640af/raisimGymTorch/raisimGymTorch/env/envs/ours_demo/demo.py#L90)). 
 
