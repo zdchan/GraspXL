@@ -26,7 +26,7 @@
 
 
 ## Dataset
-The dataset has been released, including the grasping motion sequences of different robot hands for 500k+ objects. Check [docs/DATASET.md](./docs/DATASET.md) for details and instructions. For an easier trial of the dataset, we give some examples of the data in the [dataset_example](./dataset_example) subfolder.
+The dataset has been released, including the grasping motion sequences of different robot hands for 500k+ objects. Check [docs/DATASET.md](./docs/DATASET.md) for details and instructions. For an easier trial of the dataset, we give some examples (30 objects) of the data in the [dataset_example](./dataset_example) subfolder.
 
 
 
