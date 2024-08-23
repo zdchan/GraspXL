@@ -101,4 +101,4 @@ mano_dataset_3.zip
 Same as above. Another group of recorded motion sequences. 
 
 ### Additional data
-``objaverse_urdf.zip`` contains the urdf files of the 500k+ objaverse objects, which are used by the code to generate the motions in simulation.
+``objaverse_urdf.zip`` contains the URDF files of the 500k+ objaverse objects, which are used by the code to generate the motions in simulation.
