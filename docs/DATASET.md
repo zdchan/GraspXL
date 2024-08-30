@@ -8,7 +8,7 @@
 ### Potential tasks with GraspXL:
 - Generating general grasping motions for [full-body motion generation](https://eth-ait.github.io/phys-fullbody-grasp/)
 - Achieving zero-shot text-to-motion generation with off-the-shelf [text-to-mesh](https://dreamfusion3d.github.io/) generation methods
-- Generating large scale of pseudo 3D RGBD grasping motions with [texture generation](https://mq-zhang1.github.io/HOIDiffusion/) methods
+- Generating large scale of pseudo 3D RGBD grasping motions with [texture generation](https://mq-zhang1.github.io/HOIDiffusion/) methods and help with further downstream applications such as [training a general pose estimation model](https://nvlabs.github.io/FoundationPose/)
 - [Simulating general human hand motions](https://eth-ait.github.io/synthetic-handovers/) for human-robot interaction
 - Serving as expert demonstrations for robot imitation learning
 
