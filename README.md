@@ -16,6 +16,7 @@
 
 ## News
 [2024.08] **Data visualizer released!**
+
 [2024.08] **Code released!**
 
 [2024.07] **The large-scale generated motions for 500k+ objects, each with diverse objectives and currently MANO and Allegro hand models, are ready to download! If you are interested, just fill [this form](https://forms.gle/dNwaGvtb4ppi1HZt5) to get access!**
