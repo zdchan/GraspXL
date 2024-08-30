@@ -6,7 +6,7 @@
 - Each motion contains accurate object and hand poses of each frame.
 
 ### Potential tasks with GraspXL:
-- Generating [full-body motion](https://goal.is.tue.mpg.de/) for general objects
+- Generating [full-body motion](https://eth-ait.github.io/phys-fullbody-grasp/) for general objects
 - Achieving zero-shot text-to-motion generation with off-the-shelf [text-to-mesh](https://dreamfusion3d.github.io/) generation methods
 - Generating large scale of pseudo-real 3D RGBD grasping motions with [texture generation](https://mq-zhang1.github.io/HOIDiffusion/) methods
 - [Simulating general human hand motions](https://eth-ait.github.io/synthetic-handovers/) for human-robot interaction
