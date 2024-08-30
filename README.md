@@ -23,7 +23,7 @@
 
 **We will continuously enrich the dataset (e.g., motions generated with more hand models, more grasping motions generated with different objectives, etc) and keep you updated!**
 
-[2024.03] **~~The code will be released soon.~~ Please fill [this form](https://forms.gle/dNwaGvtb4ppi1HZt5) if you want to get the notification for any update!**
+[2024.03] **~~The code will be released soon.~~ Please fill out [this form](https://forms.gle/dNwaGvtb4ppi1HZt5) if you want to get the notification for any update!**
 
 
 
@@ -32,7 +32,7 @@ The dataset has been released, including the grasping motion sequences of differ
 
 For an easier trial of the dataset, we give some examples (30 objects) of the data in the [dataset_example](./dataset_example) subfolder.
 
-We also creat a visualizer for the grasping motions. Check [GraspXL_visualization](https://github.com/zdchan/GraspXL_visualization) for more details.
+We also provide a visualizer for the grasping motions. Check [GraspXL_visualization](https://github.com/zdchan/GraspXL_visualization) for more details.
 
 
 
