@@ -15,7 +15,7 @@
 7. [License](#license)
 
 ## News
-[2024.08] **Data example & visualizer released!**
+[2024.08] **Data example & viewer released!**
 
 [2024.08] **Code released!**
 
@@ -32,7 +32,7 @@ The dataset has been released, including the grasping motion sequences of differ
 
 For an easier trial of the dataset, we give some examples (30 objects) of the data in the [dataset_example](./dataset_example) subfolder.
 
-We also provide a visualizer for the grasping motions. Check [GraspXL_visualization](https://github.com/zdchan/GraspXL_visualization) for more details.
+We also provide a viewer for the grasping motions. Check [GraspXL_visualization](https://github.com/zdchan/GraspXL_visualization) for more details.
 
 
 
