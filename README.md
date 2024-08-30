@@ -15,7 +15,7 @@
 7. [License](#license)
 
 ## News
-[2024.08] **Data visualizer released!**
+[2024.08] **Data example & visualizer released!**
 
 [2024.08] **Code released!**
 
