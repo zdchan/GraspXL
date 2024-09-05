@@ -44,6 +44,10 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:<PATH_TO_RAISIM_BUILD_FOLDER>/lib
 export PYTHONPATH=$PYTHONPATH:<PATH_TO_RAISIM_BUILD_FOLDER>/lib
 ```
 Do not use ```~``` to reference your home directory. Write the full path.
+Run ~/.bashrc for the first time.
+``` 
+source ~/.bashrc
+```
 
 ## Visualizations (Unity) Installation
 
