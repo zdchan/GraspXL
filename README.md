@@ -36,6 +36,8 @@ We also provide a viewer for the grasping motions. Check [GraspXL_visualization]
 
 **For texture**. We use decimated and texture-free Objaverse meshes in our dataset for smaller space consumption. However, the original Objaverse object ids are still included in the dataset (<object_id>). You can download the original Objaverse objects with textures according to their official download tutorial. The only thing to notice is the meshes we use in our dataset are scaled from original meshes, so you should calculate the scaling factor of each object by the bounding box size, and scale the downloaded original Objaverse mesh accordingly while keeping the textures. It should be quite convenient to be done with a Python script using trimesh or/and pymeshlab. After this, you can replace the objects in the dataset with the textured meshes for visualization.
 
+**Note** The MANO hand poses in our dataset align with the original MANO model. Note that [manopth](https://github.com/hassony2/manopth) and [manotorch](https://github.com/lixiny/manotorch) have different joint orders. For more details, check [manotorch](https://github.com/lixiny/manotorch).
+
 
 
 ## Code
