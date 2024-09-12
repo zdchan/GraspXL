@@ -141,4 +141,4 @@ To cite us, please use the following:
 
 ## License
 
-See the following [license](LICENSE.md).
+This work and the dataset are licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
