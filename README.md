@@ -15,6 +15,8 @@
 7. [License](#license)
 
 ## News
+[2024.10] **We released the script to pre-process the new objects that are suitable for grasping. Check [URDF_gen_from_obj](./raisimGymTorch/raisimGymTorch/helper/URDF_gen_from_obj) subfolder**
+
 [2024.08] **Data example & viewer released!**
 
 [2024.08] **Code released!**
