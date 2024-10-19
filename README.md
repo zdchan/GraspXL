@@ -15,7 +15,7 @@
 7. [License](#license)
 
 ## News
-[2024.10] **We released the script in [URDF_gen_from_obj](./raisimGymTorch/raisimGymTorch/helper/URDF_gen_from_obj) to pre-process new objects. Put the .obj files you want to grasp (make sure they have meaningful sizes for grasping) under [URDF_gen_from_obj/temp](./raisimGymTorch/raisimGymTorch/helper/URDF_gen_from_obj/) and run [urdf_gen.py](./raisimGymTorch/raisimGymTorch/helper/URDF_gen_from_obj/urdf_gen.py), it will generate a folder with the proccessed objects and the urdf files in [rsc](./rsc), which you can further utilize to generate grasping motions with any environment scripts.**
+[2024.10] **We released the script in [URDF_gen_from_obj](./raisimGymTorch/raisimGymTorch/helper/URDF_gen_from_obj) to pre-process new objects. Put the .obj files you want to grasp (make sure they have meaningful sizes for grasping) under [URDF_gen_from_obj/temp](./raisimGymTorch/raisimGymTorch/helper/URDF_gen_from_obj/) and run [urdf_gen.py](./raisimGymTorch/raisimGymTorch/helper/URDF_gen_from_obj/urdf_gen.py), then it will generate a folder with the processed objects and the urdf files in [rsc](./rsc), which you can further utilize to generate grasping motions with any environment scripts.**
 
 [2024.08] **Data example & viewer released!**
 
