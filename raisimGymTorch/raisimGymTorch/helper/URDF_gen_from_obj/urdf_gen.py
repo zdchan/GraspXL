@@ -48,7 +48,7 @@ for root, dirs, files in os.walk(source_folder):
 input_directory = 'formated_temp_obj'
 output_directory = 'formated_temp_obj_urdf/'
 
-no_bottom = False
+no_bottom = True
 decimated = False
 
 for root, dirs, files in os.walk(input_directory):
