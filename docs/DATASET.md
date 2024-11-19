@@ -117,4 +117,4 @@ Same as above. Another group of recorded motion sequences.
 ### Additional data
 ``objaverse_urdf.zip`` contains the URDF files of the 500k+ objaverse objects, which are used by the code to generate the motions in simulation.
 
-``leap_dataset_1.zip`` contains the grasping motions for a subset of the 500k+ objects with the LEAP hand model. The dataset structure and data format are the same as the data for Allegro Hand.
+``leap_dataset_1.zip`` contains the LEAP hand grasping motions for a subset of the 500k+ objects. The dataset structure and data format are the same as the data for Allegro Hand.
