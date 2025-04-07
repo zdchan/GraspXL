@@ -141,20 +141,14 @@ def get_initial_pose(obj_mesh, non_aff_mesh, easy=False):
             supp_line[0] = 1
 
         axis_list = []
-        # lat_length_list = []
-        # long_length_list = []
-        # axis, lat_length, long_length = find_smallest_boundary_axis(obj_pcd[0] - aff_center, dir[0])
         axis, lat_length, long_length = find_smallest_boundary_axis(obj_pcd[0], dir[0])
         axis_list.append(axis)
         axis_lat = axis.copy()
-        # lat_length_list.append(lat_length)
-        # long_length_list.append(long_length)
 
         if lat_length > 0.12:
             continue
 
         axis = np.stack(axis_list, axis=0)
-        # long_length_list = np.stack(long_length_list, axis=0)
 
         # rotate the x axis of the hand (grasping direction) to the target direction
         rot = get_hand_rot(dir, vec_in_hand=x_axis)
@@ -163,7 +157,7 @@ def get_initial_pose(obj_mesh, non_aff_mesh, easy=False):
         y_axis = rot_R.apply(y_axis)
         z_axis = rot_R.apply(z_axis)
 
-        # calculate the angle to rotate the y axis of the hand (grasping direction) to the direction vertical to target direction
+        # calculate the angle to rotate the y axis of the hand to the direction vertical to target direction
         angle = np.arccos((y_axis*axis).sum(axis=-1))[:,np.newaxis]
         # angle[dir_mask] *= -1
 
@@ -324,7 +318,7 @@ def get_initial_pose_universal(obj_mesh, non_aff_mesh):
             y_axis = rot_R.apply(y_axis)
             z_axis = rot_R.apply(z_axis)
 
-            # calculate the angle to rotate the y axis of the hand (grasping direction) to the direction vertical to target direction
+            # calculate the angle to rotate the y axis of the hand to the direction vertical to target direction
             angle = np.arccos((y_axis*axis).sum(axis=-1))[:,np.newaxis]
 
             offset = 2*np.pi / 20
@@ -383,7 +377,7 @@ def get_initial_pose_universal(obj_mesh, non_aff_mesh):
             y_axis = rot_R.apply(y_axis)
             z_axis = rot_R.apply(z_axis)
 
-            # calculate the angle to rotate the y axis of the hand (grasping direction) to the direction vertical to target direction
+            # calculate the angle to rotate the y axis of the hand to the direction vertical to target direction
             angle = np.arccos((y_axis*axis).sum(axis=-1))[:,np.newaxis]
 
             offset = 2*np.pi / 20
@@ -469,7 +463,7 @@ def get_initial_pose_universal_demo(obj_mesh, non_aff_mesh):
             y_axis = rot_R.apply(y_axis)
             z_axis = rot_R.apply(z_axis)
 
-            # calculate the angle to rotate the y axis of the hand (grasping direction) to the direction vertical to target direction
+            # calculate the angle to rotate the y axis of the hand  to the direction vertical to target direction
             angle = np.arccos((y_axis*axis).sum(axis=-1))[:,np.newaxis]
 
             offset = 2*np.pi / 20
@@ -530,7 +524,7 @@ def get_initial_pose_universal_demo(obj_mesh, non_aff_mesh):
             y_axis = rot_R.apply(y_axis)
             z_axis = rot_R.apply(z_axis)
 
-            # calculate the angle to rotate the y axis of the hand (grasping direction) to the direction vertical to target direction
+            # calculate the angle to rotate the y axis of the hand to the direction vertical to target direction
             angle = np.arccos((y_axis*axis).sum(axis=-1))[:,np.newaxis]
 
             offset = 2*np.pi / 20
@@ -627,7 +621,7 @@ def get_initial_pose_set(obj_mesh, non_aff_mesh, direction, rotation, point, han
     y_axis = rot_R.apply(y_axis)
     z_axis = rot_R.apply(z_axis)
 
-    # calculate the angle to rotate the y axis of the hand (grasping direction) to the direction vertical to target direction
+    # calculate the angle to rotate the y axis of the hand to the direction vertical to target direction
     angle = np.arccos((y_axis*axis).sum(axis=-1))[:,np.newaxis]
     # angle[dir_mask] *= -1
 
@@ -719,7 +713,7 @@ def get_initial_pose_faive(obj_mesh, non_aff_mesh, hand_type='faive'):
         y_axis = rot_R.apply(y_axis)
         z_axis = rot_R.apply(z_axis)
 
-        # calculate the angle to rotate the y axis of the hand (grasping direction) to the direction vertical to target direction
+        # calculate the angle to rotate the y axis of the hand to the direction vertical to target direction
         angle = np.arccos((y_axis * axis).sum(axis=-1))[:, np.newaxis]
         # angle[dir_mask] *= -1
 
@@ -871,7 +865,7 @@ def get_initial_pose_faive_label(obj_mesh, non_aff_mesh, hand_type='faive', load
     y_axis = rot_R.apply(y_axis)
     z_axis = rot_R.apply(z_axis)
 
-    # calculate the angle to rotate the y axis of the hand (grasping direction) to the direction vertical to target direction
+    # calculate the angle to rotate the y axis of the hand to the direction vertical to target direction
     angle = np.arccos((y_axis * axis).sum(axis=-1))[:, np.newaxis]
     # angle[dir_mask] *= -1
 
