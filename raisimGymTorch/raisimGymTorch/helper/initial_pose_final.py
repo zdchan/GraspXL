@@ -157,7 +157,7 @@ def get_initial_pose(obj_mesh, non_aff_mesh, easy=False):
         y_axis = rot_R.apply(y_axis)
         z_axis = rot_R.apply(z_axis)
 
-        # calculate the angle to rotate the y axis of the hand to the direction vertical to target direction
+        # calculate the angle to rotate the y axis of the hand to the direction of the narrowest boundary
         angle = np.arccos((y_axis*axis).sum(axis=-1))[:,np.newaxis]
         # angle[dir_mask] *= -1
 
@@ -318,7 +318,7 @@ def get_initial_pose_universal(obj_mesh, non_aff_mesh):
             y_axis = rot_R.apply(y_axis)
             z_axis = rot_R.apply(z_axis)
 
-            # calculate the angle to rotate the y axis of the hand to the direction vertical to target direction
+            # calculate the angle to rotate the y axis of the hand to the direction of the narrowest boundary
             angle = np.arccos((y_axis*axis).sum(axis=-1))[:,np.newaxis]
 
             offset = 2*np.pi / 20
@@ -377,7 +377,7 @@ def get_initial_pose_universal(obj_mesh, non_aff_mesh):
             y_axis = rot_R.apply(y_axis)
             z_axis = rot_R.apply(z_axis)
 
-            # calculate the angle to rotate the y axis of the hand to the direction vertical to target direction
+            # calculate the angle to rotate the y axis of the hand to the direction of the narrowest boundary
             angle = np.arccos((y_axis*axis).sum(axis=-1))[:,np.newaxis]
 
             offset = 2*np.pi / 20
@@ -463,7 +463,7 @@ def get_initial_pose_universal_demo(obj_mesh, non_aff_mesh):
             y_axis = rot_R.apply(y_axis)
             z_axis = rot_R.apply(z_axis)
 
-            # calculate the angle to rotate the y axis of the hand  to the direction vertical to target direction
+            # calculate the angle to rotate the y axis of the hand to the direction of the narrowest boundary
             angle = np.arccos((y_axis*axis).sum(axis=-1))[:,np.newaxis]
 
             offset = 2*np.pi / 20
@@ -524,7 +524,7 @@ def get_initial_pose_universal_demo(obj_mesh, non_aff_mesh):
             y_axis = rot_R.apply(y_axis)
             z_axis = rot_R.apply(z_axis)
 
-            # calculate the angle to rotate the y axis of the hand to the direction vertical to target direction
+            # calculate the angle to rotate the y axis of the hand to the direction of the narrowest boundary
             angle = np.arccos((y_axis*axis).sum(axis=-1))[:,np.newaxis]
 
             offset = 2*np.pi / 20
@@ -621,7 +621,7 @@ def get_initial_pose_set(obj_mesh, non_aff_mesh, direction, rotation, point, han
     y_axis = rot_R.apply(y_axis)
     z_axis = rot_R.apply(z_axis)
 
-    # calculate the angle to rotate the y axis of the hand to the direction vertical to target direction
+    # calculate the angle to rotate the y axis of the hand to the direction of the narrowest boundary
     angle = np.arccos((y_axis*axis).sum(axis=-1))[:,np.newaxis]
     # angle[dir_mask] *= -1
 
@@ -713,7 +713,7 @@ def get_initial_pose_faive(obj_mesh, non_aff_mesh, hand_type='faive'):
         y_axis = rot_R.apply(y_axis)
         z_axis = rot_R.apply(z_axis)
 
-        # calculate the angle to rotate the y axis of the hand to the direction vertical to target direction
+        # calculate the angle to rotate the y axis of the hand to the direction of the narrowest boundary
         angle = np.arccos((y_axis * axis).sum(axis=-1))[:, np.newaxis]
         # angle[dir_mask] *= -1
 
@@ -865,7 +865,7 @@ def get_initial_pose_faive_label(obj_mesh, non_aff_mesh, hand_type='faive', load
     y_axis = rot_R.apply(y_axis)
     z_axis = rot_R.apply(z_axis)
 
-    # calculate the angle to rotate the y axis of the hand to the direction vertical to target direction
+    # calculate the angle to rotate the y axis of the hand to the direction of the narrowest boundary
     angle = np.arccos((y_axis * axis).sum(axis=-1))[:, np.newaxis]
     # angle[dir_mask] *= -1
 
